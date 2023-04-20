@@ -1,0 +1,8 @@
+Flask==2.2.2
+Flask_Cors==3.0.10
+langchain==0.0.144
+pinecone==0.1.0
+pinecone_client==2.2.1
+python-dotenv==1.0.0
+requests==2.28.2
+Werkzeug==2.2.2
