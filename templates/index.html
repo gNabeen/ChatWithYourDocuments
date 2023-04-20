@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <title>Chat with your Documents</title>
+
+    <link rel="stylesheet" href="/static/css/styles.css" />
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+
+  <body>
+    <div class="main-container">
+      <div class="chat-container">
+        <div class="chat-title">
+            <h1>Chat with your documents</h1>
+        </div>
+
+        <div class="chat-window" id="chat-content"></div>
+
+        <div class="form-container">
+        <form id="query-form">
+        <div class="query-input-container">
+            <div class="input-wrapper">
+                <input type="text" id="query" name="query" required disabled />
+                <button type="submit" class="chat-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 416 416" width="24" height="24" class="chat-icon">
+                                        <path
+                                            d="M389.251,3.033c-2.4-2.4-5.6-2.8-8.8-1.6l-375.6,153.6c-3.2,1.2-5.2,4.4-4.8,7.6c0,3.2,2.4,6.4,5.6,7.2l162.8,52.4 l52.4,162.8c1.2,3.2,4,5.6,7.2,5.6h0.4c3.2,0,6-2,7.2-4.8l154.8-374.4C392.051,8.633,391.651,5.033,389.251,3.033z M229.651,359.833l-47.2-146c-0.8-2.4-2.8-4.4-5.2-5.2l-146-47.2l316.8-129.6l-119.2,119.2c-3.2,3.2-3.2,8,0,11.2 c1.6,1.6,3.6,2.4,5.6,2.4s4-0.8,5.6-2.4l121.6-121.6L229.651,359.833z">
+                                        </path>
+                                        <path
+                                            d="M203.251,176.633l-8.4,8.4c-3.2,3.2-3.2,8,0,11.2c1.6,1.6,3.6,2.4,5.6,2.4s4-0.8,5.6-2.4l8.4-8.4c3.2-3.2,3.2-8,0-11.2 C211.251,173.433,206.451,173.433,203.251,176.633z">
+                                        </path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        </form>
+        </div>
+      </div>
+
+      <div class="pdf-container">
+        <iframe
+          src="/pdfs/Kaye_2000_Minesweeper_is_NP-complete.pdf"
+          type="application/pdf"
+        ></iframe>
+
+        <div class="pdf-input-container">
+          <div class="form-container">
+            <div class="radio-input-container">
+              <input
+                type="radio"
+                id="upload"
+                name="document_type"
+                value="upload"
+                checked
+              />
+
+              <label for="upload">Upload</label>
+
+              <input type="radio" id="url" name="document_type" value="url" />
+
+              <label for="url">URL</label>
+            </div>
+
+            <form id="upload-form" class="document-input">
+              <div class="input-row">
+                <div class="drag-and-drop-area">
+                  <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    accept=".pdf"
+                    draggable="true"
+                  />
+
+                  <span class="file-placeholder">Drag and Drop or Select</span>
+
+                  <span
+                    class="selected-file-name"
+                    style="display: none;"
+                  ></span>
+                </div>
+
+                <button id="load-document-button" type="submit" disabled>
+                  Load Document
+                </button>
+              </div>
+            </form>
+
+            <form
+              id="url-form"
+              class="document-input url-input-container"
+              style="display: none;"
+            >
+              <div class="input-row">
+                <input type="url" id="url-input" name="url" class="url-input" />
+                <button id="load-document-url-button" type="submit" disabled>
+                  Load Document
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="/static/js/main.js"></script>
+  </body>
+</html>
